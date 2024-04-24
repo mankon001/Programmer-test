@@ -247,25 +247,23 @@ function App() {
                       </div>
 
                       <div style={{ display: 'flex', gap: '30px' }}>
-                        <Button variant="contained" color="primary" size="large"
-                          style={{ width: '100px', boxShadow: 'none' }} disabled={
-                          Object.values(invalidFields).some(field=> field) ||
-                          formData.score.trim() === '' ||
-                          (formData.score < 0 || formData.score> 100)
-                            }
-                            onClick={(isEditing || Object.values(invalidFields).some(field => field)) ? null :
-                            addNewData}
-                            >
-                            {isEditing ? 'Edit' : 'Add'}
-                        </Button>
 
-                        <Button variant="outlined" size="large"
-                          style={{ width:'100px', backgroundColor:'white',color:'black', border:'0'}}
-                          onClick={handleCancel}>
-                          Cancel
-                        </Button>
-                      </div>
-                      </div>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  style={{ width: '100px', boxShadow: 'none' }}
+                  onClick={isEditing ? updateData : addNewData}
+                >
+                  {isEditing ? 'Edit' : 'Add'}
+                </Button>
+
+                  <Button variant="outlined" size="large"
+                    style={{ width:'100px', backgroundColor:'white',color:'black', border:'0'}} onClick={handleCancel}>
+                    Cancel
+                  </Button>
+                </div>
+              </div>
             </Box>
 
             <div style={{ margin:'20px' }}>
